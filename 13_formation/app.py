@@ -13,7 +13,7 @@ def respond():
     print (request.method)
     print (request.args)
     print (request.form)
-    return render_template('response.html',response=request.args.get('item'))
+    return render_template('response.html',response=request.args.get('username'),method=request.method)
 
 if __name__ == '__main__':
     app.run(debug=True)
