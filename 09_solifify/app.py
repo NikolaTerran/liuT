@@ -1,3 +1,8 @@
+#Terran Liu
+#SoftDev1 pd09
+#K09 -- Solidify
+#2018-10-01    
+
 from flask import Flask
 app = Flask(__name__)
 
