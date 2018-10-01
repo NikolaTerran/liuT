@@ -1,0 +1,15 @@
+<!DOCTYPE = html>
+<html>
+        <title> Hola! </title>
+        <head>
+        </head>
+        <body>
+                <form action="/args">
+                        Username: <input type = "text" name="usr" ></br>
+                        Password: <input type = "text" name="pwd"></br>
+                <input type="submit" value="Submit">
+        </body>
+</html>
+~                                                                               
+~                                                                               
+~                                           
