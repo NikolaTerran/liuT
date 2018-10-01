@@ -31,7 +31,7 @@ def login():
 		print("xxx DIAG:session xxx")
 		print(session)
 		return redirect(url_for('home'))
-	elif request.args.get['usr'] == 'Alan Smith' and request.form.get('pwd')!='password12345678':
+	elif request.args['usr'] == 'Alan Smith' and request.args['pwd']!='password12345678':
 		return render_template('error.html',message='password wrong!')
 	else:
 		return render_template('error.html',message='username wrong!')
