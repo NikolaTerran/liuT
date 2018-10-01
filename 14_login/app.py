@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, session, redirect, url_for
+import os
 
 app = Flask(__name__)
-app.secret_key = "password12345678"
+app.secret_key = os.urandom(8)
 
 @app.route('/')
 def home():
@@ -38,7 +39,9 @@ def login():
 
 @app.route('/logout')
 def logout():
-	session.pop('username',None)
+	session.pop('username',"Alan Smith")
+	print("xxx DIAG:session xxx")
+	print(session)
 	return redirect(url_for('home'))
 
 	
