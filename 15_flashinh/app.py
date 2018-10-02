@@ -1,7 +1,7 @@
 #Claire Liu and Tianrun Liu - Liu Squared
 #SoftDev1 pd6
-#K14 -- Do I know You?
-#2018-10-02
+#K15 -- Oh yes, perhaps I do…
+#2018-10-03
 
 from flask import Flask, render_template, request, session, redirect, url_for, flash
 import os
