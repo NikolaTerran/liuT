@@ -13,24 +13,22 @@ c = db.cursor()               #facilitate db ops
 #==========================================================
 #INSERT YOUR POPULATE CODE IN THIS ZONE
 
+#command = "CREATE TABLE new_roster(code TEXT,mark INTERGER,id INTERGER)"
+#c.execute(command)    #run SQL statement
 
-#command = "CREATE TABLE roster(name TEXT,userid INTERGER)"
-file = open('courses.csv')
-reader = csv.DictReader(file)
-
-command2 = ""
-
-for row in reader:
-	print(row)
-	command2 = "INSERT INTO roster VALUES ('name','userid');"
-	c.execute(command2)
+#file = open('data/courses.csv')
+#reader = csv.reader(file)
+#next(reader)
+#for row in reader:
+#	command2 = "INSERT INTO new_roster VALUES (?,?,?);"
+#	c.execute(command2,row)
 	
 
-#c.execute(command)    #run SQL statement
+
 #==========================================================
 
-db.commit() #save changes
-c.execute("SELECT * FROM roster")
+#db.commit() #save changes
+c.execute("SELECT * FROM new_roster")
 print(c.fetchall())
 db.close()  #close database
 
