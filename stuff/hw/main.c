@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "struct.h"
+#include "linkedlist.h"
 
 int main(){
 	struct node head = {10, 0};
