@@ -1,6 +1,6 @@
-#Tianrun Liu
+#Team Typers-Tianrun Liu and Kyle Tau
 #SoftDev1 pd6
-#Average
+#K17 -- Average
 #2018-10-08
 
 import sqlite3   #enable control of an sqlite database
@@ -15,32 +15,32 @@ c = db.cursor()               #facilitate db ops
 #**************FILL TABLE COURSES********************
 #
 #open and read csv file
-#file = open('data/courses.csv')
-#reader = csv.reader(file)
+file = open('data/courses.csv')
+reader = csv.reader(file)
 #
 #create courses table
-#command = "CREATE TABLE courses(code TEXT,mark INTEGER,id INTEGER)"
-#c.execute(command)    #run SQL statement
+command = "CREATE TABLE courses(code TEXT,mark INTEGER,id INTEGER)"
+c.execute(command)    #run SQL statement
 #
 #add data by key into table
-#for row in reader:
-#	command2 = 'INSERT INTO courses VALUES(?,?,?)'
-#	c.execute(command2,row)
+for row in reader:
+	command2 = 'INSERT INTO courses VALUES(?,?,?)'
+	c.execute(command2,row)
 #
 #**************FILL TABLE PEEPS********************
 #
 #open and read csv file
-#file = open('data/peeps.csv')
-#new_reader = csv.reader(file)
+file = open('data/peeps.csv')
+new_reader = csv.reader(file)
 #
 #create peeps table
-#command3 = "CREATE TABLE peeps(name TEXT,age INTEGER,id INTEGER)"
-#c.execute(command3)
+command3 = "CREATE TABLE peeps(name TEXT,age INTEGER,id INTEGER)"
+c.execute(command3)
 #
 #add data by key into table
-#for row in new_reader:
-#	command4 = 'INSERT INTO peeps VALUES(?,?,?)'
-#	c.execute(command4,row)
+for row in new_reader:
+	command4 = 'INSERT INTO peeps VALUES(?,?,?)'
+	c.execute(command4,row)
 #
 #==========================================================
 #
@@ -71,50 +71,50 @@ def stu_average(stu_id):
 	print("student with id = " + str(stu_id) + "'s average is " + str(result))	
 	return result
 
-#THIS IS NOT WORKING
 def all_stu_average():
 	c.execute("select name, id from peeps")
 	result = c.fetchall()
 	for r in result:
-		r;
-		print(r)
+		try:
+			stu_average(r[1])
+		except:
+			pass #this will skip the first row in result, which is not an integer and will cause an error
 	return ""
+
 #=======================CREATE TABLE peeps_avg============================
-#command3 = "CREATE TABLE peeps_avg(id INTEGER,average INTEGER)"
-#c.execute(command3)
-#
-#command4 = "INSERT INTO peeps_avg(id) select id from peeps"
-#c.execute(command4)
+command3 = "CREATE TABLE peeps_avg(id INTEGER,average INTEGER)"
+c.execute(command3)
 #
 #########################################################################
 #USE MODULAR DESIGN#USE MODULAR DESIGN#USE MODULAR DESIGN
 #########################################################################
-#c.execute("update peeps_avg set average = 'average' where id = 'id'")
-#c.execute("update peeps_avg set average = ? where id = 1",[stu_average(1)])
-#c.execute("update peeps_avg set average = ? where id = 2",[stu_average(2)])
-#c.execute("update peeps_avg set average = ? where id = 3",[stu_average(3)])
-#c.execute("update peeps_avg set average = ? where id = 4",[stu_average(4)])
-#c.execute("update peeps_avg set average = ? where id = 5",[stu_average(5)])
-#c.execute("update peeps_avg set average = ? where id = 6",[stu_average(6)])
-#c.execute("update peeps_avg set average = ? where id = 7",[stu_average(7)])
-#c.execute("update peeps_avg set average = ? where id = 8",[stu_average(8)])
-#c.execute("update peeps_avg set average = ? where id = 9",[stu_average(9)])
-#c.execute("update peeps_avg set average = ? where id = 10",[stu_average(10)])
-#
-#c.execute("delete from peeps_avg where id IS NULL ")
+for r in range(10):
+	c.execute("INSERT INTO {} VALUES({},{})".format("peeps_avg",r+1,stu_average(r+1)))
 #
 #db.commit()
 #===========================================================================
 		
+def addRow(code, mark, id):                                              #facilitates adding row to courses
+	c.execute("INSERT INTO courses VALUES ({},{},{})".format(code, mark, id))
 
-print("=======================DEMO fetch student grade==================");
-stu_grade(1)
-print("=======================DEMO fetch all student grade==============");
-all_stu_grade()
-print("=======================DEMO calc student average=================");
-stu_average(1)
-print("=======================DEMO all student average==================");
-all_stu_average()
+def display():
+	print("================ALL STUDENTS AND AVERAGES=================")
+	for r in range(10):
+		c.execute("select name from peeps where id = {}".format(r+1))
+		result1 = c.fetchall()
+		c.execute("select * from peeps_avg where id = {}".format(r+1))
+		result2 = c.fetchall()
+		print(result1+result2)
+
+display()
+#print("=======================DEMO fetch student grade==================");
+#stu_grade(1)
+#print("=======================DEMO fetch all student grade==============");
+#all_stu_grade()
+#print("=======================DEMO calc student average=================");
+#stu_average(1)
+#print("=======================DEMO all student average==================");
+#all_stu_average()
 
 #db.commit() #save changes #test code
 #print("**************************COURSES*********************************")
