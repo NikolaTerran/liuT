@@ -1,0 +1,106 @@
+<!DOCTYPE=html>
+<html>
+	<head>
+	</head>
+	<body>
+		1993
+		Schinderler's list
+		Jurrasic park
+		Robin hood actor
+
+		Mozilla killed netscape
+
+		Internet in 1990s
+		--hyperlinks
+		--static pages
+
+
+		Java script
+		--created by Brendan Eich in 10 days (prototype)
+		--"Mocha","LiveScript","JavaScript" by v2.0 (beta 3)
+		
+		"Paul gram"
+		
+		Portals -- webpage with all the things you need
+			MS-MSN, Yahoo(written in scheme(LISP)) and so on
+			
+		Scheme + "JAVA" = JAVASCRIPT
+		
+		The Big Idea:
+			"Let's give Scheme the syntax of JAVA, and mooch off Java's
+			popularity by calling this JAVASCRIPT"
+			javascript != java
+			
+		90's browser wars: IE vs Netscapte
+			standards
+			1996: VBScript, JScript...
+			"best viewed in_____"
+				--specific browser 
+				
+		JAVAscript is slow
+		
+		Darcy DiNucci, in Fragmented Future 1999
+			"Web 2.0"
+			
+		2005: JS goes mainstream
+		* advent of web 2.0
+		
+		Jesse James Garrett:
+		* whitepaper on JS-driven page updates w/o reload ("asynchronous")
+	
+		Wat @garybernhardt
+		
+		JS features:
+		*dynamic typing
+		*first-class fxns
+			can be treated like vars(passed, returned)
+		*obj-oriented
+		*imperative
+		*functional
+		
+		JS "limitations":
+		* no I/O (networking, sotage, graphics)
+		
+		JS Syntax:
+		*from C (like Java, Python, C++, etc.)
+		*auto-semicolon-ination!
+		
+		AVOID:
+		
+		function fnxName(args) {
+			body;
+		}
+		
+		instead, DO
+		
+		var fxnName = function(args) {
+			body;
+		};
+		
+		...or...
+		
+		var fxnName = (args_ => {
+			body;
+		};
+		
+		take advantage of functional language
+		
+		(define fact
+			(lambda (n)
+				(if (< n 2) 1
+					(* n (fact (- n 1))))))
+					
+		*easier to understand "fxn as obj"
+		*can be 
+				var fact = function(x){
+    if(x = 0){
+        return 1;
+    }
+    else{
+       return x * fact(x - 1);
+    }
+}
+
+fact(6)	
+	</body>
+</html>
