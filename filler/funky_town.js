@@ -7,17 +7,43 @@ var fact = function(x){
         }
 }
 var fibonacci = function(x){
-	int a = 1;
-	int b = 0;
-	int c = 0;
-	if(x=a){
-		return 1;
+	var a = 1;
+	var b = 0;
+	var c = 0;
+	if(x==a){
+		return a;
 	}
-	else if(x=b){
+	else if(x==b){
 		return b;
 	}
 	else {
-	
+		c=a+b;
+		b=a;
+		a=c;
+		return fibonacci(x-1) + fibonacci(x-2);
+		
 	}
 }	
-//fact();
+var gcd = function(a,b){
+	if(a%b!=0 && b%a!=0){
+		if(a>b){
+			return gcd(a%b,b);
+		}
+		else{
+			return gcd(a,b%a);
+		}
+	}
+	else{
+		if(a>b){
+			return b;
+		}
+		else{
+			return a;
+		}
+	}
+
+}
+var randomStudent=function(x){
+	var students=["Shelly","Nelson","Raymond","Yang","Julia","Garfield"];
+	return students[parseInt(Math.random()*students.length)];
+}
