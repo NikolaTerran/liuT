@@ -60,7 +60,12 @@ var gcd = function(a,b){
 	}
 
 }
-var randomStudent=function(x){
+var randomStudent=function(){
 	var students=["Shelly","Nelson","Raymond","Yang","Julia","Garfield"];
-	return students[parseInt(Math.random()*students.length)];
+	var oll = students[parseInt(Math.random()*students.length)];
+	console.log(oll);
+	return oll;
 }
+
+
+

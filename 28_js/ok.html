@@ -7,6 +7,7 @@
     <meta charset="utf-8"/>
     <title>JS work the first</title>
     <script src="funky_town.js"></script>
+	
   </head>
   <body>
     <H1>OPEN UP YOUR DEV CONSOLE AND RUN YOUR JS FUNCTIONS!!!</H1>
@@ -19,12 +20,22 @@
     <h3>fibonacci(10)
 	<h3>gcd(1542,1853)
 	<h3>randomStudent()
-        <script type="text/javascript">
+
+            <button id="b"> The button </button>
+
+
+
+  </body>
+  <footer>       
+  		<script type="text/javascript">
             console.log(fibonacci(10));
 	    	console.log(gcd(1542,1853));
 	    	console.log(randomStudent());
         </script>
-
-  </body>
+        <script>
+         	var dasbut = document.getElementById("b");
+			dasbut.addEventListener('click',randomStudent);
+		</script>
+  </footer>
 </html>
 

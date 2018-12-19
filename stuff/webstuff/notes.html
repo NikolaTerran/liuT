@@ -116,9 +116,51 @@ fact(6)
 		*named comp
 
 
+///////////////////////////////////////////////////////////////////////////
+		JS:
+		Originally designed to augment HTML and be run locally on a web browser
 
+		Dynamically typed -- var type provided at runtime (like Python)
 
+		Most development through web browsr console
 
+		No built in I/O
 
+		console.log() displays a string in the console
+
+		JS variable basics:
+
+		var c = 4;
+		var l = true;
+		var y = "hellp";
+		var d = [4,3,19];
+		var e = { 4 : 123 ; 123 ; asd};
+
+		DOM
+		*tree representation of a webpage
+		*visualization
+		*named components
+		*JS derives most of its utility fr its ability to interact with HTML, XML documents
+
+		the DOM is an API for interacting with HTML
+
+		JS for selecting HTML elements from the DOM;
+		document.getElementById(<ID>)
+		document.getElementsByTagName(<TAG>)
+		document.getElementsByClassName(<CLASS>)
+
+		JS for user action awareness:
+		.addEventListener( <EVENT>,<FUNCTION>)
+
+		Q: What preceds the dot?
+
+		in HTML
+		
+		<button id="b"> The button </button>
+		
+		in JS:
+		var dasbut = document.getElementById("b")
+		dasbut.addEventListener('click',fxnName() );
+		
 	</body>
 </html>
