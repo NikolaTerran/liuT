@@ -6,7 +6,24 @@ var fact = function(x){
         return x * fact(x - 1);
         }
 }
+
 var fibonacci = function(x){
+	var a = 1;
+	var b = 0;
+	var c = 0;
+	if(x <= 1){
+		return a;
+	}
+	while(x > 1){
+		c = b;
+		b = a;
+		a = b + c;
+		x--;		
+	}
+	return a;
+}	
+
+var fibonacci_rec = function(x){
 	var a = 1;
 	var b = 0;
 	var c = 0;
