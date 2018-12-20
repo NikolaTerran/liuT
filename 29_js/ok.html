@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- HTML file for JavaScript work 00 -->
+
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>JS work the first</title>
+    <script src="funky_town.js"></script>
+	
+  </head>
+  <body>
+    <H1>OPEN UP YOUR DEV CONSOLE AND RUN YOUR JS FUNCTIONS!!!</H1>
+    <h3>(Ctrl-Shift-J in Chrome)</h3>
+    <h3>(Ctrl-Shift-K in Firefox)</h3>
+	<br>
+    <h3>Web console will automatically show the result of following code:</h3>
+    <h3>fibonacci(10)
+	<h3>gcd(1542,1853)
+	<h3>randomStudent()
+	<br>
+	<h3>these things will print the result of js function in console</h3>
+            <input id="a_t" type="text">
+            <button id="a"> Fact </button>
+            <br>
+            <input id="b_t" type="text">
+			<button id="b"> Fib </button>
+			<br>
+			<input id="c_t1" type="text">
+			<input id="c_t2" type="text">
+			<button id="c"> GCD </button>
+			<br>
+			<button id="d"> ran_stu </button>
+			<br>
+			<h3>returns: </h3>
+			<h3 id="e"> result </h3>
+
+  </body>
+  <footer>       
+  	<script type="text/javascript">
+            console.log(fibonacci(10));
+	    	console.log(gcd(1542,1853));
+	    	console.log(randomStudent());
+	    	var e_call = document.getElementById("e");
+         	var d_call = document.getElementById("d");
+			d_call.addEventListener('click',
+			function(){
+			randomStudent;
+			e_call.innerHTML = randomStudent();
+			});
+			
+			var a_call = document.getElementById("a");
+			a_call.addEventListener('click',function(){console.log(fact(document.getElementById("a_t").value));
+			e_call.innerHTML = fact(document.getElementById("a_t").value);}
+			);
+			
+			var b_call = document.getElementById("b");
+			b_call.addEventListener('click',function(){console.log(fibonacci(document.getElementById("b_t").value));
+			e_call.innerHTML = fibonacci(document.getElementById("b_t").value);});
+			
+			var c_call = document.getElementById("c");
+			c_call.addEventListener('click',function(){
+			console.log(gcd(document.getElementById("c_t1").value,
+			document.getElementById("c_t2").value));
+			e_call.innerHTML = 				
+			gcd(document.getElementById("c_t1").value,
+			document.getElementById("c_t2").value);});
+	
+			
+			
+	</script>
+  </footer>
+</html>
+
