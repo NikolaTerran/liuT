@@ -21,8 +21,8 @@
 	<h3>gcd(1542,1853)
 	<h3>randomStudent()
 
-            <button id="b"> The button </button>
-
+            <button id="b"> Random Stu </button>
+			<button id="a"> FIB </button>
 
 
   </body>
@@ -31,11 +31,17 @@
             console.log(fibonacci(10));
 	    	console.log(gcd(1542,1853));
 	    	console.log(randomStudent());
-        </script>
-        <script>
-         	var dasbut = document.getElementById("b");
+        	var dasbut = document.getElementById("b");
 			dasbut.addEventListener('click',randomStudent);
-		</script>
+			var das = document.getElementById("a");
+			dasbut.addEventListener('click',console.log(fibonacci(10)));
+        	
+        	var uio = document.getElementById("a");
+        	das.addEventListener('click',
+        		function() {console.log("hello");}
+        		);
+        
+        </script>
   </footer>
 </html>
 
