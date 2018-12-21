@@ -25,7 +25,7 @@
       <li>item 4</li>
       <li>item 5</li>
       <li>item 6</li>
-      <li>item 7</li>
+      <li id = "c">item 7</li>
     </ol>
 
 <br>
@@ -34,10 +34,44 @@
     </ol>
 
 
-    <button id="b">The button</button>
+    <button id="b" onclick="add-item()" >The button</button>
     <button id="fb">fib button</button>
     
-    <script src="dommy.js"></script>
+    <button onclick="myFunction()">Try it</button>
+<footer>
+
+<script>
+/*
+function add-item() {
+	var li = document.createElement("LI");
+	var a = document.createTextNode("item");
+	li.appendChild(a);
+	document.getElementById("c").appendChiled(li);
+}
+*/
+
+
+var add_item = document.getElementById("b");
+add_item.addEventListener('click',
+	myFunction
+);
+
+var remove_item = document.getElementById("thelist");
+remove_item.addEventListener('click',function(e){
+	//remove_item.removeChild(remove_item.childNodes[0]);
+	console.log(e);
+});
+
+function myFunction() {
+  var btn = document.createElement("LI");
+  var t = document.createTextNode("CLICK ME");
+  btn.appendChild(t);
+  console.log("hello");
+  document.getElementById("thelist").appendChild(btn);
+}
+</script>
+
+</footer>
 
   </body>
 

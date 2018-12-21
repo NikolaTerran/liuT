@@ -1,3 +1,4 @@
+/*
 var add_item = document.getElementById("b");
 add_item.addEventListener('click',function(){
 	add_item = document.createElement("BUTTON");
@@ -32,3 +33,4 @@ var e_call = document.getElementById("e");
 		var button = document.getElementsByTagName("BUTTON");
          a_call.addEventListener('mouseover',
          function(e){console.log(e);});
+         */
