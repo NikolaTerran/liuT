@@ -18,14 +18,14 @@
     <div class="blue">This is a toid div</div>
 
     <ol id="thelist">
-      <li>item 0</li>
-      <li>item 1</li>
+      <li value="0">item 0</li>
+      <li value="1">item 1</li>
       <li>item 2</li>
-      <li>item 3</li>
+      <li value="">item 3</li>
       <li>item 4</li>
       <li>item 5</li>
       <li>item 6</li>
-      <li id = "c">item 7</li>
+      <li id = "c" value = "7">item 7</li>
     </ol>
 
 <br>
@@ -34,7 +34,7 @@
     </ol>
 
 
-    <button id="b" onclick="add-item()" >The button</button>
+    <button id="b">The button</button>
     <button id="fb">fib button</button>
     
     <button onclick="myFunction()">Try it</button>
@@ -49,8 +49,6 @@ function add-item() {
 	document.getElementById("c").appendChiled(li);
 }
 */
-
-
 var add_item = document.getElementById("b");
 add_item.addEventListener('click',
 	myFunction
@@ -58,17 +56,54 @@ add_item.addEventListener('click',
 
 var remove_item = document.getElementById("thelist");
 remove_item.addEventListener('click',function(e){
-	//remove_item.removeChild(remove_item.childNodes[0]);
-	console.log(e);
+	remove_item.removeChild(remove_item.childNodes[0]);
+	//console.log(e);
 });
 
+var change_head = document.getElementById("thelist");
+
+change_head.addEventListener('mouseover',function(elv){
+
+
+
+
+var selec = document.getElementById("h");
+selec.innerHTML = elv.innerHTML;
+
+	//console.log(e);
+});
+
+change_head.addEventListener('mouseout',function(){
+var hola = document.getElementById("h");
+hola.innerHTML = "Hello World!";
+	//console.log(e);
+});
+
+
+
 function myFunction() {
+  var selec =    
+    document.getElementById("c");
+  
+  var int = selec.value + 1;
+  
+ var str = "item " +  int;
+
   var btn = document.createElement("LI");
-  var t = document.createTextNode("CLICK ME");
+  var t = document.createTextNode(str
+  );
+  
+  btn.setAttribute("id","c");
+  btn.setAttribute("value",int);
+ 
+  selec.setAttribute("id","useless");
+   // selec.getAttribute('value');
+
   btn.appendChild(t);
-  console.log("hello");
+  console.log(selec.getAttribute('value'));
   document.getElementById("thelist").appendChild(btn);
 }
+
 </script>
 
 </footer>
@@ -76,4 +111,3 @@ function myFunction() {
   </body>
 
 </html>
-
